@@ -2,10 +2,10 @@ const config = {
     local : {
         db :{
             host : "localhost",
-            port : "27017",
+            port : 27017,
             databaseName : "siddhant",
-            userName:"siddhant",
-            password:"siddhant"
+            userName:"",
+            password:""
         },
         api_port : 5001,
         client_secret_key:"thsgsjs"
@@ -13,7 +13,7 @@ const config = {
     staging:{
         db :{
             host :"172.10.1.3",
-            port :"27017",
+            port :27017,
             databaseName :"siddhantsingh", 
             userName :"siddhantsingh",
             password :"siddhantsingh87"

@@ -4,7 +4,7 @@ var config = require('./config/config');
 
 var configdata = config.get(process.env.Node_env).db;
 import 'dotenv/config'
-console.log(process.env)
+console.log(process.env.Node_env)
 var mongoUrl = `mongodb://${configdata.host}:${configdata.port}/${configdata.databaseName}`;
 
 console.log(mongoUrl);
@@ -16,7 +16,7 @@ var options= {
 
 export const mongoconnection = async() => {
     try{
-        await mongoose.connect(mongoUrl);
+        await mongoose.connect(mongoUrl,options);
         console.log("Connect to DB");
     }
     catch(e){

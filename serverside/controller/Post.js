@@ -5,7 +5,7 @@ import post from '../model/Post';
 
 export const addDocument = async (req, res) => {
     const documentEntry = new post({
-        // name:req.body.name,
+    
         image: req.files.image,
         video: req.files.video
     })
