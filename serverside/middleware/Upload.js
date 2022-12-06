@@ -1,16 +1,14 @@
 import multer from 'multer'
 var image = multer.diskStorage({
     destination: function (req, file, callback) {
-        console.log(file, "checking file")
-        // console.log(file.originalname.split(/[#?]/)[0].split('.').pop().trim(), "sadasasd")
         if (file.fieldname == "image") {
-            callback(null, 'file')
+            callback(null, 'Image')
         }
         else {
             // console.log("Image error")
         }
-        if (file.fieldname == "audio") {
-            callback(null, 'file')
+        if (file.fieldname == "video") {
+            callback(null, 'Video')
         }
         else {
             // console.log("Image error")
@@ -22,6 +20,6 @@ var image = multer.diskStorage({
         callback(null, file.fieldname + "-" + Date.now() + "." + ext)
     }
 })
-export const upload = multer({
+export const document = multer({
     storage: image
 })

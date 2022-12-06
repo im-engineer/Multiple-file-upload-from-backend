@@ -5,7 +5,7 @@ import cors from 'cors'
 import {mongoconnection} from './db';
 mongoconnection();
 app.use(cors({origin:"*"}));
-import router from "./router/fileUpload"
+import router from "./router/Post"
 
 app.use(bodyParser.urlencoded(
     {
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded(
 app.use(bodyParser.json());
 
 app.use("/user",router)
-app.use("/upload",express.static("uploads"))
+// app.use("/upload",express.static("uploads"))
 
 
 export default app;
